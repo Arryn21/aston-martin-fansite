@@ -11,10 +11,10 @@
 // The apiKey is safe to publish — it only identifies the project; the
 // Firestore rules are what protect the data.
 
-window.LEADERBOARD_CONFIG = null;
+//window.LEADERBOARD_CONFIG = null;
 
 // Example (replace with yours and uncomment):
-// window.LEADERBOARD_CONFIG = {
-//   projectId: "aston-fansite-12345",
-//   apiKey: "AIzaSy...."
-// };
+window.LEADERBOARD_CONFIG = {
+  projectId: "aston-fansite",
+  apiKey: "AIzaSyDmvgCxf6uMsfRRe5YW59AqdngFBGV569I"
+};
