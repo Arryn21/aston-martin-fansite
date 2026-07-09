@@ -177,8 +177,8 @@
     if (nameEl) nameEl.textContent = label;
     const scopeEl = document.getElementById('lbScope');
     if (scopeEl) scopeEl.textContent = LB.isGlobal
-      ? 'Global standings — top ' + LB.TOP_N + ' of everyone who has raced ' + label + '.'
-      : 'Stored on this device. (Global leaderboard activates once js/lb-config.js is filled in — see FIREBASE_SETUP.md.)';
+      ? 'Global top ' + LB.TOP_N + ' — every player, every device.'
+      : 'Times are stored in this browser only for now.';
     el.innerHTML = '<p class="news-note">Loading…</p>';
     const rows = await LB.getTop(trackName);
     el.innerHTML = rows.length
@@ -241,6 +241,7 @@
 
     document.getElementById('selectScreen').style.display = 'none';
     document.getElementById('raceScreen').style.display = 'block';
+    window.scrollTo(0, 0);
     document.getElementById('hudCar').textContent = selectedCar.name;
     document.getElementById('hudBest').textContent = '–';
     document.getElementById('resultsBox').innerHTML = '';

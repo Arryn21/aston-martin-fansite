@@ -452,14 +452,39 @@ h2::after { content: ''; flex: 1; height: 1px; background: linear-gradient(90deg
 .track-info h3 { font-family: var(--serif); font-weight: 400; font-size: 1.35rem; letter-spacing: 1px; color: var(--champagne-bright); }
 .track-info p { color: var(--mist); margin-top: 0.4rem; }
 
+/* game two-column layout: main + sticky leaderboard sidebar */
+.container-wide { max-width: 1340px; }
+.game-layout { display: grid; grid-template-columns: minmax(0, 1fr) 320px; gap: 2rem; align-items: start; }
+.lb-side { position: sticky; top: 76px; }
+.lb-side-head {
+  font-family: var(--serif); font-size: 1.15rem; letter-spacing: 3px;
+  text-transform: uppercase; color: var(--ivory);
+  border-bottom: 1px solid rgba(201, 179, 126, 0.45); padding-bottom: 0.5rem;
+}
+.lb-side-track {
+  font-family: var(--sans); font-weight: 300; font-size: 0.72rem;
+  letter-spacing: 2.5px; text-transform: uppercase; color: var(--champagne);
+  margin: 0.6rem 0 0.9rem;
+}
+.lb-side-scope { font-size: 0.85rem; margin-top: 0.9rem; }
+@media (max-width: 980px) {
+  .game-layout { grid-template-columns: 1fr; }
+  .lb-side { position: static; }
+}
+
 /* leaderboard */
 .lb-table { border: 1px solid var(--line); border-radius: 4px; overflow: hidden; }
 .lb-row {
-  display: grid; grid-template-columns: 3rem 1fr 1fr 6rem;
-  gap: 0.8rem; align-items: center;
-  padding: 0.65rem 1.1rem; border-bottom: 1px solid var(--line);
-  font-family: var(--sans); font-weight: 300; font-size: 0.88rem;
+  display: grid; grid-template-columns: 2.4rem 1fr 5.4rem;
+  gap: 0.6rem; align-items: center;
+  padding: 0.6rem 0.9rem; border-bottom: 1px solid var(--line);
+  font-family: var(--sans); font-weight: 300; font-size: 0.85rem;
   background: var(--card); transition: background 0.25s;
+}
+.lb-row .name { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.lb-row .carname {
+  grid-column: 2 / 4; margin-top: -0.3rem;
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
 }
 .lb-row:last-child { border-bottom: none; }
 .lb-row:nth-child(1) .rank, .lb-row:nth-child(2) .rank, .lb-row:nth-child(3) .rank { color: var(--champagne-bright); }
