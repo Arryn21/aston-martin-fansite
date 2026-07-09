@@ -51,6 +51,16 @@ nav .brand {
   text-transform: uppercase; text-decoration: none;
 }
 nav .brand svg { display: block; }
+
+/* real heritage wings badge (1935, public domain) tinted via CSS mask */
+.wings-logo {
+  display: inline-block; background: var(--champagne);
+  -webkit-mask: url('../img/wings.svg') no-repeat center / contain;
+  mask: url('../img/wings.svg') no-repeat center / contain;
+}
+.nav-wings { width: 64px; height: 26px; flex: 0 0 auto; }
+.hero-wings { width: 210px; height: 86px; margin: 0 auto; background: var(--champagne-bright); }
+a:hover .nav-wings { background: var(--champagne-bright); }
 nav .spacer { flex: 1; }
 nav a.link {
   color: var(--mist); text-decoration: none; padding: 1.1rem 0.85rem;
