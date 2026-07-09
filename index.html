@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aston Martin — Power, Beauty, Soul</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<nav>
+  <a class="brand" href="index.html">
+    <svg width="46" height="15" viewBox="0 0 104 32"><g stroke="#c9b37e" stroke-width="1.5" fill="none" stroke-linecap="round"><path d="M52 7 L4 26 M52 7 L100 26 M52 7 L22 25 M52 7 L82 25 M52 7 L38 24 M52 7 L66 24"/></g></svg>
+    Aston Martin
+  </a>
+  <span class="spacer"></span>
+  <a class="link active" href="index.html">Home</a>
+  <a class="link" href="cars.html">Garage</a>
+  <a class="link" href="history.html">History</a>
+  <a class="link" href="movies.html">Movies</a>
+  <a class="link" href="tech.html">Tech</a>
+  <a class="link" href="quiz.html">Quiz</a>
+  <a class="link" href="news.html">News</a>
+  <a class="link" href="game.html">Race</a>
+</nav>
+
+<div class="hero">
+  <div class="hero-img" id="heroImg"></div>
+  <div class="wings-mark">
+    <svg width="120" height="34" viewBox="0 0 104 32"><g stroke="#c9b37e" stroke-width="1.4" fill="none" stroke-linecap="round"><path d="M52 6 L2 28 M52 6 L102 28 M52 6 L20 27 M52 6 L84 27 M52 6 L36 26 M52 6 L68 26 M52 6 L52 27"/></g></svg>
+  </div>
+  <h1>Aston Martin</h1>
+  <div class="est">Power &nbsp;·&nbsp; Beauty &nbsp;·&nbsp; Soul &nbsp;·&nbsp; Est. 1913</div>
+  <p class="lead">A century of the world's most charismatic cars — from Brooklands record-breakers
+     to Bond's DB5 to the 11,100&nbsp;rpm Valkyrie.</p>
+</div>
+
+<div class="container">
+  <div class="spotlight reveal">
+    <div class="photo-side" id="factPhoto"></div>
+    <div>
+      <div class="eyebrow">Today's Aston Fact — <span id="factDate"></span></div>
+      <div class="fact" id="dailyFact">Loading…</div>
+    </div>
+  </div>
+
+  <div class="spotlight linked reveal" id="carSpotlight">
+    <div class="photo-side" id="carPhoto"></div>
+    <div>
+      <div class="eyebrow">Car of the Day</div>
+      <div class="fact" id="dailyCarName"></div>
+      <p id="dailyCarBlurb" style="color:var(--mist); margin-top:0.7rem"></p>
+      <div class="goto">View in the Garage →</div>
+    </div>
+  </div>
+
+  <h2>Explore</h2>
+  <div class="grid">
+    <a class="card tile reveal" href="cars.html"><div class="photo" data-img="db5"></div><div class="body"><div class="roman">I</div><h3>The Garage</h3><p>Thirty legendary Astons — full history, specifications, designers and stories.</p></div></a>
+    <a class="card tile reveal" href="history.html"><div class="photo" data-img="dbr1"></div><div class="body"><div class="roman">II</div><h3>History</h3><p>1913 to today: seven bankruptcies, one Le Mans crown, endless comebacks.</p></div></a>
+    <a class="card tile reveal" href="movies.html"><div class="photo" data-img="db10"></div><div class="body"><div class="roman">III</div><h3>Movies &amp; Bond</h3><p>Every 007 Aston from Goldfinger to No Time to Die, gadgets included.</p></div></a>
+    <a class="card tile reveal" href="tech.html"><div class="photo" data-img="valkyrie"></div><div class="body"><div class="roman">IV</div><h3>Technology</h3><p>Superleggera bodies, Newey aerodynamics, Marek engines, F1 transfer.</p></div></a>
+    <a class="card tile reveal" href="quiz.html"><div class="photo" data-img="one77"></div><div class="body"><div class="roman">V</div><h3>Daily Quiz</h3><p>Ten questions per round. Best score kept on this device.</p></div></a>
+    <a class="card tile reveal" href="game.html"><div class="photo" data-img="vulcan"></div><div class="body"><div class="roman">VI</div><h3>Race Simulator</h3><p>Choose any Aston and race — with engine sound to match its cylinders.</p></div></a>
+    <a class="card tile reveal" href="news.html"><div class="photo" data-img="amr23"></div><div class="body"><div class="roman">VII</div><h3>News</h3><p>Latest headlines, Formula 1 updates and launches.</p></div></a>
+  </div>
+</div>
+
+<footer>An unofficial tribute · Not affiliated with Aston Martin Lagonda Ltd</footer>
+
+<script src="js/data.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

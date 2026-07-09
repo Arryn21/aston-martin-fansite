@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Race Simulator — Aston Martin</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<nav>
+  <a class="brand" href="index.html">
+    <svg width="46" height="15" viewBox="0 0 104 32"><g stroke="#c9b37e" stroke-width="1.5" fill="none" stroke-linecap="round"><path d="M52 7 L4 26 M52 7 L100 26 M52 7 L22 25 M52 7 L82 25 M52 7 L38 24 M52 7 L66 24"/></g></svg>
+    Aston Martin
+  </a>
+  <span class="spacer"></span>
+  <a class="link" href="index.html">Home</a>
+  <a class="link" href="cars.html">Garage</a>
+  <a class="link" href="history.html">History</a>
+  <a class="link" href="movies.html">Movies</a>
+  <a class="link" href="tech.html">Tech</a>
+  <a class="link" href="quiz.html">Quiz</a>
+  <a class="link" href="news.html">News</a>
+  <a class="link active" href="game.html">Race</a>
+</nav>
+
+<div class="container">
+  <div id="selectScreen">
+    <h1>Race <span class="accent">Simulator</span></h1>
+    <p class="subtitle">Choose your Aston. Stats and engine sound come from the real cars —
+       a Valkyrie will out-drag a DB2 and scream at 11,000 rpm, as nature intended. Three laps against three rivals.</p>
+    <div class="filters" id="trackPick"></div>
+    <div class="car-select" id="carSelect"></div>
+    <div class="center"><button class="btn solid" id="startBtn">Start Race</button></div>
+
+    <h2>Leaderboard — <span id="lbTrackName"></span></h2>
+    <p class="news-note" id="lbScope"></p>
+    <div id="lbBox"></div>
+  </div>
+
+  <div id="raceScreen" style="display:none">
+    <div class="game-hud">
+      <span>Car <b id="hudCar"></b></span>
+      <span>Lap <b id="hudLap">1/3</b></span>
+      <span>Pos <b id="hudPos">–</b></span>
+      <span>Time <b id="hudTime">0:00.0</b></span>
+      <span>Best lap <b id="hudBest">–</b></span>
+      <button class="hud-btn" id="muteBtn">Sound: On</button>
+    </div>
+    <canvas id="gameCanvas" width="900" height="600"></canvas>
+    <p class="center controls-note">
+      Accelerate ↑ / W &nbsp;·&nbsp; Brake ↓ / S &nbsp;·&nbsp; Steer ← → / A D &nbsp;·&nbsp; R restart &nbsp;·&nbsp; Esc change car
+    </p>
+    <div id="resultsBox"></div>
+  </div>
+</div>
+
+<footer>An unofficial tribute · Not affiliated with Aston Martin Lagonda Ltd</footer>
+
+<script src="js/data.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/sound.js"></script>
+<script src="js/lb-config.js"></script>
+<script src="js/leaderboard.js"></script>
+<script src="js/game.js"></script>
+</body>
+</html>

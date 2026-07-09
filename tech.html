@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Technology — Aston Martin</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<nav>
+  <a class="brand" href="index.html">
+    <svg width="46" height="15" viewBox="0 0 104 32"><g stroke="#c9b37e" stroke-width="1.5" fill="none" stroke-linecap="round"><path d="M52 7 L4 26 M52 7 L100 26 M52 7 L22 25 M52 7 L82 25 M52 7 L38 24 M52 7 L66 24"/></g></svg>
+    Aston Martin
+  </a>
+  <span class="spacer"></span>
+  <a class="link" href="index.html">Home</a>
+  <a class="link" href="cars.html">Garage</a>
+  <a class="link" href="history.html">History</a>
+  <a class="link" href="movies.html">Movies</a>
+  <a class="link active" href="tech.html">Tech</a>
+  <a class="link" href="quiz.html">Quiz</a>
+  <a class="link" href="news.html">News</a>
+  <a class="link" href="game.html">Race</a>
+</nav>
+
+<div class="container">
+  <h1>Engineering the <span class="accent">Wings</span></h1>
+  <p class="subtitle">The technology behind a century of Astons — from hand-rolled aluminium to Formula 1 ground effect.</p>
+  <div id="techList"></div>
+</div>
+
+<footer>An unofficial tribute · Not affiliated with Aston Martin Lagonda Ltd</footer>
+
+<script src="js/data.js"></script>
+<script src="js/ui.js"></script>
+<script>
+document.getElementById('techList').innerHTML = TECH.map(t =>
+  `<div class="tech-card reveal"><h3>${t.title}</h3><p>${t.body}</p></div>`
+).join('');
+AMUI.reveal();
+</script>
+</body>
+</html>

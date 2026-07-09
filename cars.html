@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Garage — Aston Martin</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<nav>
+  <a class="brand" href="index.html">
+    <svg width="46" height="15" viewBox="0 0 104 32"><g stroke="#c9b37e" stroke-width="1.5" fill="none" stroke-linecap="round"><path d="M52 7 L4 26 M52 7 L100 26 M52 7 L22 25 M52 7 L82 25 M52 7 L38 24 M52 7 L66 24"/></g></svg>
+    Aston Martin
+  </a>
+  <span class="spacer"></span>
+  <a class="link" href="index.html">Home</a>
+  <a class="link active" href="cars.html">Garage</a>
+  <a class="link" href="history.html">History</a>
+  <a class="link" href="movies.html">Movies</a>
+  <a class="link" href="tech.html">Tech</a>
+  <a class="link" href="quiz.html">Quiz</a>
+  <a class="link" href="news.html">News</a>
+  <a class="link" href="game.html">Race</a>
+</nav>
+
+<div class="container">
+  <h1>The <span class="accent">Garage</span></h1>
+  <p class="subtitle">Every icon, from the 1921 A3 to today's Formula 1 car. Select a car for the full story.</p>
+
+  <div class="filters" id="filters"></div>
+  <div class="grid" id="carGrid"></div>
+</div>
+
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal" id="modalBody"></div>
+</div>
+
+<footer>An unofficial tribute · Not affiliated with Aston Martin Lagonda Ltd</footer>
+
+<script src="js/data.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/cars.js"></script>
+</body>
+</html>
