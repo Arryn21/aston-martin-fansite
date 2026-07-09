@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Race Simulator — Aston Martin</title>
-<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/style.css?v=2">
 </head>
 <body>
 <nav>
@@ -29,6 +29,13 @@
     <p class="subtitle">Choose your Aston. Stats and engine sound come from the real cars —
        a Valkyrie will out-drag a DB2 and scream at 11,000 rpm, as nature intended. Three laps against three rivals.</p>
     <div class="filters" id="trackPick"></div>
+    <div class="track-preview-row">
+      <canvas id="trackPreview" width="340" height="220"></canvas>
+      <div class="track-info">
+        <h3 id="tpName"></h3>
+        <p id="tpDesc"></p>
+      </div>
+    </div>
     <div class="car-select" id="carSelect"></div>
     <div class="center"><button class="btn solid" id="startBtn">Start Race</button></div>
 
@@ -56,11 +63,11 @@
 
 <footer>An unofficial tribute · Not affiliated with Aston Martin Lagonda Ltd</footer>
 
-<script src="js/data.js"></script>
-<script src="js/ui.js"></script>
-<script src="js/sound.js"></script>
-<script src="js/lb-config.js"></script>
-<script src="js/leaderboard.js"></script>
-<script src="js/game.js"></script>
+<script src="js/data.js?v=2"></script>
+<script src="js/ui.js?v=2"></script>
+<script src="js/sound.js?v=2"></script>
+<script src="js/lb-config.js?v=2"></script>
+<script src="js/leaderboard.js?v=2"></script>
+<script src="js/game.js?v=2"></script>
 </body>
 </html>

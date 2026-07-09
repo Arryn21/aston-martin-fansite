@@ -103,8 +103,57 @@
     if (!btn) return;
     trackName = btn.dataset.track;
     trackPickEl.querySelectorAll('button').forEach(b => b.classList.toggle('active', b === btn));
+    drawPreview();
     renderBoard('lbBox');
   });
+
+  // ---------- TRACK PREVIEW (mini map on select screen) ----------
+  const TRACK_DESC = {
+    silverstone: 'Fast and technical — long sweepers into a stop-start infield. The all-rounder.',
+    monaco: 'Tight and unforgiving street circuit. Handling wins here, horsepower just gets you into the barriers.',
+    oval: 'Flat-out banked speed bowl. Top speed is everything — bring a Valkyrie.',
+    lemans: 'Long straights and heavy braking zones in the style of La Sarthe. Slipstream and courage.',
+    alpine: 'Mountain pass of relentless hairpins. The narrowest road on the calendar.',
+    gp: 'Modern grand prix flow — quick direction changes and one big lunge-worthy hairpin.'
+  };
+
+  function drawPreview() {
+    const cv = document.getElementById('trackPreview');
+    if (!cv) return;
+    const pc = cv.getContext('2d');
+    const track = TRACKS[trackName];
+    const p = track.pts;
+    // fit 900x600 world into the preview canvas with padding
+    const pad = 18;
+    const sx = (cv.width - pad * 2) / 900, sy = (cv.height - pad * 2) / 600;
+    const s = Math.min(sx, sy);
+    const ox = pad + (cv.width - pad * 2 - 900 * s) / 2;
+    const oy = pad + (cv.height - pad * 2 - 600 * s) / 2;
+    const X = pt => ox + pt[0] * s, Y = pt => oy + pt[1] * s;
+
+    pc.clearRect(0, 0, cv.width, cv.height);
+    pc.lineJoin = 'round'; pc.lineCap = 'round';
+    const path = () => {
+      pc.beginPath();
+      pc.moveTo(X(p[0]), Y(p[0]));
+      for (let i = 1; i < p.length; i++) pc.lineTo(X(p[i]), Y(p[i]));
+      pc.closePath();
+    };
+    pc.strokeStyle = 'rgba(201,179,126,0.35)'; pc.lineWidth = track.width * s + 5; path(); pc.stroke();
+    pc.strokeStyle = '#33383b'; pc.lineWidth = track.width * s; path(); pc.stroke();
+    pc.strokeStyle = 'rgba(255,255,255,0.3)'; pc.lineWidth = 1; pc.setLineDash([4, 5]); path(); pc.stroke();
+    pc.setLineDash([]);
+    // start marker
+    pc.fillStyle = '#e3d3a6';
+    pc.beginPath(); pc.arc(X(p[0]), Y(p[0]), 4, 0, Math.PI * 2); pc.fill();
+
+    const nameEl = document.getElementById('tpName');
+    if (nameEl) {
+      nameEl.textContent = track.label;
+      document.getElementById('tpDesc').textContent = TRACK_DESC[trackName] || '';
+    }
+  }
+  drawPreview();
 
   // ---------- LEADERBOARD UI ----------
   function esc(s) {
